@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2022_04_28_170311) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.string "image"
   end
 
   create_table "items", force: :cascade do |t|
