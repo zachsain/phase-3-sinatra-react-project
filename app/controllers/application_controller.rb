@@ -28,6 +28,7 @@ class ApplicationController < Sinatra::Base
   get "/categories/:id" do 
     category = Category.find_by(id: params[:id])
     category.to_json(include: :items)
+    
   end 
 
   post "/categories/:category_id/items" do 
