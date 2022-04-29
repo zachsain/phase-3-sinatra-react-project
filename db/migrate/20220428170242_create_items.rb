@@ -8,4 +8,5 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.string :category_id
     end 
   end
+  
 end
