@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
 
   post "/categories" do 
     category = Category.create(
-      name: params[:name]
+      name: params[:name],
       image: params[:image]
     )
     category.to_json
@@ -26,7 +26,8 @@ class ApplicationController < Sinatra::Base
   end 
 
   get "/categories/:id" do 
-    category = Category
+    category = Category.find_by(id: params[:id])
+    category.to_json(include: :items)
   end 
 
   post "/categories/:category_id/items" do 
