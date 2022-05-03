@@ -43,24 +43,14 @@ class ApplicationController < Sinatra::Base
      price: params[:price], 
      image: params[:image])
 
-     byebug
-     binding.pry
+    #  byebug
+    #  binding.pry
 
     item.to_json 
     
   end
 
-  # post "/category/:category_id/item" do 
-  #   category = Category.find_by(category_id: params[:category_id])
-    
-  #   item = category.items.create(
-  #    name: params[:name],
-  #    price: params[:price], 
-  #    image: params[:image])
   
-  #   item.to_json 
-    
-  # end
 
   delete '/categories/:id' do
     category = Category.find(params[:id])

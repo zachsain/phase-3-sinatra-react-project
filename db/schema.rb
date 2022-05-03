@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2022_04_28_170311) do
     t.string "image"
     t.string "comment"
     t.boolean "liked"
+    t.integer "price"
     t.string "category_id"
   end
 

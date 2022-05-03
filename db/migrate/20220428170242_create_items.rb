@@ -5,6 +5,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.string :image
       t.string :comment
       t.boolean :liked
+      t.integer :price
       t.string :category_id
     end 
   end
