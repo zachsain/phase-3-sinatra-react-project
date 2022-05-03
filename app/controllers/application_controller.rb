@@ -1,3 +1,5 @@
+require 'pry'
+
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
@@ -32,8 +34,11 @@ class ApplicationController < Sinatra::Base
   end 
 
   post "/categories/:category_id/items" do 
-    category = Category.find_by(category_id: params[:category_id])
     
+    binding.pry
+    
+    category = Category.find_by(category_id: params[:category_id])
+     
     item = category.items.create(
      name: params[:name],
      price: params[:price], 
