@@ -35,15 +35,17 @@ class ApplicationController < Sinatra::Base
 
   post "/categories/:category_id/items" do 
     
-    binding.pry
-    
-    category = Category.find_by(category_id: params[:category_id])
+
+    category = Category.find_by(id: params[:category_id])
      
     item = category.items.create(
      name: params[:name],
      price: params[:price], 
      image: params[:image])
-  
+
+     byebug
+     binding.pry
+
     item.to_json 
     
   end
@@ -63,13 +65,11 @@ class ApplicationController < Sinatra::Base
   delete '/categories/:id' do
     category = Category.find(params[:id])
     catgory.destroy
-    category.to_json
   end
 
   delete "/items/:id" do 
-    item = Items.find_by(id: params[:id])
-    item.destroy 
-    item.to_json 
+    item = Item.find_by(id: params[:id])
+    item.destroy  
   end
 
   
