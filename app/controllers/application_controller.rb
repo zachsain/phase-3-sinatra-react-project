@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
     item = category.items.create(
      name: params[:name],
      price: params[:price], 
-     image: params[:image]
+     image: params[:image])
   
     item.to_json 
     
