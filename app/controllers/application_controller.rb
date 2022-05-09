@@ -47,7 +47,7 @@ class ApplicationController < Sinatra::Base
     #  binding.pry
 
     item.to_json 
-    
+
     
   end
 
@@ -63,6 +63,14 @@ class ApplicationController < Sinatra::Base
     item.destroy  
   end
 
+  patch '/items/:id' do
+    item = Item.find_by(id: params[:id])
+    item.update(
+      name: params[:name],
+      
+    )
+    item.to_json
+  end
   
   #Add :
   #Delete 
