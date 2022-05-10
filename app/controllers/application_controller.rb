@@ -63,7 +63,7 @@ class ApplicationController < Sinatra::Base
     item.destroy  
   end
 
-  patch '/items/:id/edit' do
+  patch '/items/:id' do
     # binding.pry
     item = Item.find_by(id: params[:id])
     item.update(
