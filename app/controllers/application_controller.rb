@@ -74,10 +74,5 @@ class ApplicationController < Sinatra::Base
     )
     item.to_json
   end
-  
-  #Add :
-  #Delete 
-  #Update 
-
-  
+   
 end
