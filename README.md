@@ -66,15 +66,20 @@ Create a new directory on your machine and run the following commands in your te
    npm start
    ```
 
-<!-- USAGE EXAMPLES -->
+
+
 ## How It Works
 
 ### Home Tab
-The home tab is just a simple welcome message for owners and their customers instructing them to click on the categories tab browse their inventory 
+The home tab is just a simple welcome message for owners and their customers instructing them to click on the categories tab browse / manage the inventory.
 
 
 ### Categories Tab
 The categories tab displays a list / links to all categories created by the rental owner. The owner can also create a new category by filling out the category form at the top of the page. By filling out the form this notifies the backend to create a new category. 
 
 ### The Category Click
-Upon clickig on a particular category the user will be directed to a new page containing a list of all of the items within that category. The user can add a new item, update an existing item, or delete an item if it is out of inventory. 
+Upon clickig on a particular category the user will be directed to a new page containing a list of all of the items within that category. The user can add a new item, update an existing item, or delete an item if it is out of inventory.
+
+### Backend Setup
+
+There are two primary tables within rentalDB database. The first is a category table which contains and name and an image. The category has many items, items being our second table. The items table has a name, image, price, and a category id (as to it belongs to a specific category).
